@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='jsgrid/dist/jsgrid.min.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='jsgrid/dist/jsgrid-theme.min.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="h3 mb-2 text-gray-800">Table EXAM</h1>
+    <p class="mb-4">CRUD (create, read, update, delete) — четыре базовые функции, используемые при работе с базами данных и прочими хранилищами информации: Создание Чтение Редактирование Удаление
+</p>
+<div class="row">
+  <!-- Approach -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold">Random the table data from in database SQlite</h6>
+    </div>
+    <div class="card-body">
+      <p>Таблица — это совокупность связанных данных, хранящихся в структурированном виде в базе данных. Она состоит из столбцов и строк.</p>
+      <hr>
+      <div class="card-body">
+        <div class="table-responsive"></div>
+        <div id="jsGrid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='jsgrid/dist/jsgrid.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/customers.js') }}"></script>
+{% endblock %}

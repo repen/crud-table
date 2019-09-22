@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='jsgrid/dist/jsgrid.min.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='jsgrid/dist/jsgrid-theme.min.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Table EXAM</h1>
+    <p class="mb-4">ORM (англ. Object-Relational Mapping, рус. объектно-реляционное отображение, или преобразование) — технология программирования, которая связывает базы данных с концепциями объектно-ориентированных языков программирования, создавая «виртуальную объектную базу данных».
+    </p>
+  <div class="row">
+    <!-- Approach -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold">Random the table data from in database SQlite</h6>
+      </div>
+      <div class="card-body">
+        <p>Реляционные базы данных используют набор таблиц, представляющих простые данные. Дополнительная или связанная информация хранится в других таблицах. Часто для хранения одного объекта в реляционной базе данных используется несколько таблиц; это, в свою очередь, требует применения операции JOIN для получения всей информации, относящейся к объекту, для её обработки. Например, для хранения данных записной книжки, скорее всего, будут использоваться как минимум две таблицы: люди и адреса, и, возможно, даже таблица с телефонными номерами. </p>
+        <hr>
+        <div class="card-body">
+          <div class="table-responsive"></div>
+          <div id="jsGrid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='jsgrid/dist/jsgrid.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/invoices.js') }}"></script>
+{% endblock %}

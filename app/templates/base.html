@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Data Table</title>
+	<link href="{{ url_for('static', filename='style/style.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<div class="wraps" style="margin: 50px;">
+
+		<div class="container">
+				<div class="boxer nav justify-content-end" style="margin-bottom: 20px;">
+					<a href="/" class="btn btn-outline-info" ><i class="fas fa-download fa-sm text-white-50"></i>Home</a>
+				</div>
+	    	<!-- Content here -->
+		</div>
+		{% block content %} {% endblock %}
+	</div>
+
+  	<!-- Page level plugins -->
+  	<script>
+		if ( window.location.pathname == '/' ){
+			var element = document.querySelector("div.boxer");
+			element.style.display = "None";
+		}
+  	</script>
+  	<script src="{{ url_for('static', filename='bootstrap/js/jquery-3.4.1.min.js') }}"></script>
+  	<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+  	<script src="{{ url_for('static', filename='bootstrap/js/popper.min.js') }}"></script>
+  	{% block script %}{% endblock %}
+</body>
+</html>

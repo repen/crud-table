@@ -1,0 +1,7 @@
+venv/
+.idea
+template
+c.sh
+Dockerfile
+boot.sh
+__pycache__

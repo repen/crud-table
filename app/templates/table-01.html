@@ -32,5 +32,14 @@
 
 {% block script %}
 <script type="text/javascript" src="{{ url_for('static', filename='jsgrid/dist/jsgrid.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/customers.js') }}"></script>
+<script>
+  var git = {bobs: function(el){return btoa(atob(el).slice(0,-1));}}
+  function b64DecodeUnicode(str) {
+        // Going backwards: from bytestream, to percent-encoding, to original string.
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
+    eval(b64DecodeUnicode(git.bobs("{{data['jsfile']|safe}}")));
+</script>
 {% endblock %}
